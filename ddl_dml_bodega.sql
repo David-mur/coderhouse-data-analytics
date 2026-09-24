@@ -14,7 +14,7 @@ USE practice_2;
 DROP TABLE IF EXISTS inventario;
 
 CREATE TABLE inventario(
-    id_producto int identity(1,1), PRIMARY KEY NOT NULL,
+    id_producto int identity(1,1) PRIMARY KEY NOT NULL,
     nombre_producto varchar(100) NOT NULL,
     categoria varchar(50) NOT NULL,
     precio_unitario decimal(10,2) NOT NULL,
