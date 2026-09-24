@@ -14,14 +14,14 @@ USE practice_2;
 DROP TABLE IF EXISTS inventario;
 
 CREATE TABLE inventario(
-    id_producto int identity(1,1) PRIMARY KEY NOT NULL,
-    nombre_producto varchar(100) NOT NULL,
-    categoria varchar(50) NOT NULL,
-    precio_unitario decimal(10,2) NOT NULL,
+    id_producto int identity(1,1) PRIMARY KEY NOT NULL, --Esta es la llave primaria--
+    nombre_producto varchar(100) NOT NULL, --EL nombre de producto tiene un tipo dinámico para los caractéres y que se guardará solo lo que se ingrese para esa entrada--
+    categoria varchar(50) NOT NULL, --Igualmente sucede para esta entrada de la categoria--
+    precio_unitario decimal(10,2) NOT NULL, --Se usa decimal que llega hasta 10 digitos y que tiene exactamente dos cifras decimales
     stock_actual int NOT NULL,
     stock_minimo int NOT NULL,
-    fecha_ingreso date NOT NULL,
-    activo bit NOT NULL
+    fecha_ingreso date NOT NULL, --Formato tipo fecha sin hora--
+    activo bit NOT NULL --Formato booleano, puede admitir True o False o también 0 y 1.
 )
 
 --Sección DML--
