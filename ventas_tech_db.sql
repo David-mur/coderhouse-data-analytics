@@ -1,3 +1,12 @@
+/**************************
+BodegaTech — Script de Inventario
+Autor: David Muñoz Restrepo
+Fecha: 24/09/2026
+*****************************/
+
+
+--Sección DDL--
+
 CREATE DATABASE practice_2;
 
 USE practice_2;
@@ -5,7 +14,7 @@ USE practice_2;
 DROP TABLE IF EXISTS inventario;
 
 CREATE TABLE inventario(
-    id_producto int identity(1,1) NOT NULL,
+    id_producto int identity(1,1), PRIMARY KEY NOT NULL,
     nombre_producto varchar(100) NOT NULL,
     categoria varchar(50) NOT NULL,
     precio_unitario decimal(10,2) NOT NULL,
@@ -14,6 +23,8 @@ CREATE TABLE inventario(
     fecha_ingreso date NOT NULL,
     activo bit NOT NULL
 )
+
+--Sección DML--
 
 INSERT INTO inventario (nombre_producto, categoria, precio_unitario, stock_actual, stock_minimo, fecha_ingreso, activo) --No se incluye id_producto porque ya con el identity(1,1) se asigna de manera automática, incrementando de uno en uno. Si se quita esto en la creación de la tabla, se tendría que poner siempre el ID y asegurarse de que no se repita.
 VALUES ('Laptop Pro 15', 'Computación', 1200.00,	15	,3,	'2024-01-10',	1);
@@ -54,5 +65,8 @@ WHERE id_producto = 2
 
 UPDATE inventario SET stock_actual = stock_actual - 5
 WHERE id_producto = 6
+
+UPDATE inventario SET activo = 0
+WHERE id_producto = 8
 
 SELECT * FROM inventario;
