@@ -1,7 +1,7 @@
 /******************************
 Script SQL, consultas JOIN
-Autor : David Muoz Restrepo
-Fecha: 
+Autor : David Muñoz Restrepo
+Fecha: Octubre 14 de 2026
 
 *****************************/
 
